@@ -50,7 +50,7 @@ export const UserProviders = ({ children }: IDefaultProviderProps) => {
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (token) {
-      const userLoad = async () => {
+      const autoLogin = async () => {
         try {
            await api.get('/products', {
             headers: {
@@ -63,7 +63,7 @@ export const UserProviders = ({ children }: IDefaultProviderProps) => {
           navigate("/")
         }
       };
-      userLoad()
+      autoLogin()
     }
     else{
       navigate("/")

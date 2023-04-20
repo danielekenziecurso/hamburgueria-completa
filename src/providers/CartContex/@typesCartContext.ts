@@ -12,6 +12,8 @@ export interface IcartContext {
   removetoListTodos: () => void;
   removeItemCarrinho: (productId: number) => void;
   totalReduce: number;
+  showProducts: () => void;
+  setFormValue: React.Dispatch<React.SetStateAction<string>>;
 }
 export interface IproductValue {
   id: number;
