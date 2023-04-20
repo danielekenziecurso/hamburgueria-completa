@@ -1,23 +1,29 @@
 import { StyledProductCard } from './style';
 import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
+import { useContext } from 'react';
+import { CartContext } from '../../../providers/CartContex/CartContext';
+import { IIProps } from '..';
 
-const ProductCard = () => (
+const ProductCard = ({product}: IIProps) => {
+  const {handleClick} = useContext(CartContext)
+return (
   <StyledProductCard>
     <div className='imageBox'>
-      <img src='https://i.imgur.com/Vng6VzV.png' alt='Hamburguer' />
+      <img src={product.img} alt='Hamburguer' />
     </div>
     <div className='content'>
       <StyledTitle tag='h3' $fontSize='three'>
-        Hamburguer
+        {product.name}
       </StyledTitle>
-      <StyledParagraph className='category'>Sanduíches</StyledParagraph>
-      <StyledParagraph className='price'>R$ 14,00</StyledParagraph>
-      <StyledButton $buttonSize='medium' $buttonStyle='green'>
+      <StyledParagraph className='category'>{product.category}</StyledParagraph>
+      <StyledParagraph className='price'>{product.price}</StyledParagraph>
+      <StyledButton $buttonSize='medium' $buttonStyle='green' onClick={() => handleClick(product.id)}>
         Adicionar
       </StyledButton>
     </div>
   </StyledProductCard>
 );
+};
 
 export default ProductCard;
