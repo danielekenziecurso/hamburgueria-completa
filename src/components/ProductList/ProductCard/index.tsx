@@ -17,7 +17,7 @@ return (
         {product.name}
       </StyledTitle>
       <StyledParagraph className='category'>{product.category}</StyledParagraph>
-      <StyledParagraph className='price'>{product.price}</StyledParagraph>
+      <StyledParagraph className='price'>{product.price.toFixed(2)}</StyledParagraph>
       <StyledButton $buttonSize='medium' $buttonStyle='green' onClick={() => handleClick(product.id)}>
         Adicionar
       </StyledButton>

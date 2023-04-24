@@ -6,6 +6,7 @@ import {
 } from "./@typesCartContext";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
+import { MdToken } from "react-icons/md";
 
 export const CartContext = createContext({} as IcartContext);
 

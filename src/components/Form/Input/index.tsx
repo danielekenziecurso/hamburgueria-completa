@@ -10,13 +10,7 @@ export interface IInputprops {
   register: UseFormRegisterReturn<string>;
 }
 
-const Input = ({
-  label,
-  type,
-  id,
-  error,
-  register,
-}: IInputprops) => (
+const Input = ({ label, type, id, error, register }: IInputprops) => (
   <div>
     <StyledInputContainer>
       <input type={type} id={id} {...register} />

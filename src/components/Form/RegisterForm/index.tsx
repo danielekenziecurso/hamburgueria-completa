@@ -19,8 +19,11 @@ const RegisterForm = () => {
       .email("O email digitado é inválido."),
     password: z
       .string()
-      .nonempty("Senha é obrigatória")
-      .min(6, "A senha precisa ter pelo menos seis caracteres"),
+      .min(8, "A senha precisa ter pelo menos oito caracteres")
+      .regex(/(?=.*[$*&@#])/, "obrigatório ao menos um caractere especial")
+      .regex(/(?=.*[a-z])/, "obrigatório ao menos uma letra minúscula")
+      .regex(/(?=.*[A-Z])/, "obrigatório ao menos uma letra maiúscula")
+      .regex(/(?=.*\d)/, "obrigatório ao menos um dígito"),
     confirmPassword: z
       .string()
       .nonempty("Confirmar a senha é obrigatório")
@@ -68,10 +71,10 @@ const RegisterForm = () => {
         register={register("password")}
       />
       <Input
-        label="confirmação de senha"   
+        label="confirmação de senha"
         id="confirmPassword"
         error={errors.confirmPassword}
-        type="confirmPassword"
+        type="password"
         register={register("confirmPassword")}
       />
       <StyledButton $buttonSize="default" $buttonStyle="gray">
