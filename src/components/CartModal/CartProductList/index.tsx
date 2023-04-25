@@ -22,7 +22,7 @@ return (
       <StyledParagraph>
         <strong>Total</strong>
       </StyledParagraph>
-      <StyledParagraph className='total'>{totalReduce.toFixed(2)}</StyledParagraph>
+      <StyledParagraph className='total'>R${totalReduce.toFixed(2)}</StyledParagraph>
     </div>
     <StyledButton $buttonSize='default' $buttonStyle='gray' onClick={() => removetoListTodos()}>
       Remover todos

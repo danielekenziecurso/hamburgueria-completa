@@ -6,7 +6,6 @@ import {
 } from "./@typesCartContext";
 import { api } from "../../services/api";
 import { toast } from "react-toastify";
-import { MdToken } from "react-icons/md";
 
 export const CartContext = createContext({} as IcartContext);
 
@@ -25,7 +24,6 @@ export const CartProviders = ({ children }: IDefaultProviderPropsChildren) => {
         product.name.toLocaleLowerCase().includes(formtext) ||
         product.category.toLocaleLowerCase().includes(formtext)
     );
-    console.log(formItem);
     if (!formValue.length) {
       setFilteredProducts([]);
     }
